@@ -1,0 +1,16 @@
+class Solution {
+    public void hanota(List<Integer> A, List<Integer> B, List<Integer> C) {
+        move(A.size(),A,B,C);
+
+    }
+   public static void move(int len,List<Integer> begin,List<Integer> mid, List<Integer> end){
+        if(len==1){
+            end.add(begin.remove(begin.size()-1));
+            return;
+        }
+        move(len-1,begin,end,mid);
+        move(1,begin,mid,end);
+        move(len-1,mid,begin,end);
+
+    }
+}
